@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,15 +125,14 @@
             AIMAQ / ABYC
           </span>
         </div>
-        <div class="mt-5 flex flex-wrap gap-2 text-xs md:text-sm">
-          <span class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full">26 pieds</span>
-          <span class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full">Bois / époxy</span>
-          <span class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full">Cat-Ketch</span>
-          <span class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full">2 propriétaires</span>
-          <span class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full">~125 h moteur</span>
-          <span class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full">Remorque incluse</span>
-          <span class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full">Trois-Pistoles, QC</span>
-        </div>
+        <nav class="mt-5 flex flex-wrap gap-2 text-xs md:text-sm">
+          <a href="#histoire" class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors">L'histoire</a>
+          <a href="#galerie" class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors">Galerie</a>
+          <a href="#specs" class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors">Caractéristiques</a>
+          <a href="#equipements" class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors">Équipements</a>
+          <a href="#inspection" class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors">Inspection</a>
+          <a href="#contact" class="bg-white/15 backdrop-blur-sm border border-white/20 text-cream px-3 py-1.5 rounded-full hover:bg-white/25 transition-colors">Contact</a>
+        </nav>
       </div>
     </div>
   </header>
@@ -141,7 +140,7 @@
   <!-- ════════════════════════════════════════════
        3. L'HISTOIRE DU BATEAU
        ════════════════════════════════════════════ -->
-  <section class="py-16 md:py-20 px-6">
+  <section id="histoire" class="py-16 md:py-20 px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-2xl md:text-3xl text-navy-dark font-bold mb-4 text-center">L'histoire de TUTKÜN</h2>
       <div class="flex justify-center mb-8">
@@ -170,7 +169,7 @@
   <!-- ════════════════════════════════════════════
        4. GALERIE PHOTOS
        ════════════════════════════════════════════ -->
-  <section class="py-12 md:py-16 px-6">
+  <section id="galerie" class="py-12 md:py-16 px-6">
     <div class="max-w-5xl mx-auto">
       <h2 class="font-serif text-2xl md:text-3xl text-navy-dark font-bold mb-8 text-center">Galerie</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -285,9 +284,9 @@
   <div id="photo-20" class="lightbox-overlay"><a href="#" class="lightbox-close">&times;</a><img src="/images/photo-20.jpg" alt="Photo 20"><a href="#photo-19" class="lightbox-nav lightbox-prev">&lsaquo;</a><a href="#photo-1" class="lightbox-nav lightbox-next">&rsaquo;</a></div>
 
   <!-- ════════════════════════════════════════════
-       4. CARACTÉRISTIQUES TECHNIQUES
+       5. CARACTÉRISTIQUES TECHNIQUES
        ════════════════════════════════════════════ -->
-  <section class="bg-navy-dark text-cream py-12 md:py-16 px-6">
+  <section id="specs" class="bg-navy-dark text-cream py-12 md:py-16 px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-2xl md:text-3xl font-bold mb-8 text-center">Caractéristiques techniques</h2>
       <div class="overflow-hidden rounded-lg border border-white/10">
@@ -350,7 +349,7 @@
   <!-- ════════════════════════════════════════════
        6. ÉQUIPEMENTS INCLUS
        ════════════════════════════════════════════ -->
-  <section class="bg-stone-100 py-12 md:py-16 px-6">
+  <section id="equipements" class="bg-stone-100 py-12 md:py-16 px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-serif text-2xl md:text-3xl text-navy-dark font-bold mb-8 text-center">Équipements inclus</h2>
       <div class="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -441,7 +440,7 @@
   <!-- ════════════════════════════════════════════
        7. INSPECTION PROFESSIONNELLE
        ════════════════════════════════════════════ -->
-  <section class="py-12 md:py-16 px-6">
+  <section id="inspection" class="py-12 md:py-16 px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-2xl md:text-3xl text-navy-dark font-bold mb-8 text-center">Inspection professionnelle</h2>
 
