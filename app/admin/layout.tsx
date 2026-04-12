@@ -35,7 +35,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Sidebar */}
       <aside className="w-64 bg-slate-800 border-r border-slate-700 flex flex-col shrink-0">
         <div className="p-6 border-b border-slate-700">
-          <h1 className="font-serif text-xl font-bold text-wood">TUTKÜN</h1>
+          <Link href="/" className="font-serif text-xl font-bold text-wood hover:text-wood-light transition-colors">TUTKÜN</Link>
           <p className="text-slate-400 text-xs mt-1">Panel Admin</p>
         </div>
         <nav className="flex-1 p-4 space-y-1">
