@@ -98,7 +98,7 @@ export default function AnnoncesPage() {
   function handleEdit(listing: Listing) {
     setForm({
       platform: listing.platform,
-      url: listing.url,
+      url: listing.url ?? '',
       status: listing.status,
       published_at: listing.published_at ?? '',
       expires_at: listing.expires_at ?? '',
@@ -198,9 +198,13 @@ export default function AnnoncesPage() {
                 <tr key={l.id} className="text-slate-300 hover:bg-slate-700/50">
                   <td className="px-4 py-3 font-medium">{l.platform}</td>
                   <td className="px-4 py-3">
-                    <a href={l.url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline truncate block max-w-48">
-                      {l.url}
-                    </a>
+                    {l.url ? (
+                      <a href={l.url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline truncate block max-w-48">
+                        {l.url}
+                      </a>
+                    ) : (
+                      <span className="text-slate-500">—</span>
+                    )}
                   </td>
                   <td className="px-4 py-3">
                     <span className={`px-2 py-1 rounded text-xs font-medium ${statusColors[l.status]}`}>
