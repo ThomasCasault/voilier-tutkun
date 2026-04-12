@@ -305,7 +305,9 @@ export default function HomePage() {
       {/* ══════ FOOTER ══════ */}
       <footer className="bg-navy-dark border-t border-white/10 text-cream/40 py-8 px-6 text-center text-sm">
         <p>Trois-Pistoles, Québec</p>
-        <p className="mt-2 text-cream/30">&copy; 2026</p>
+        <p className="mt-2 text-cream/30">
+          <a href="/admin/login" className="hover:text-cream/50 transition-colors">&copy; 2026</a>
+        </p>
       </footer>
 
       {/* ══════ STICKY CTA MOBILE ══════ */}
