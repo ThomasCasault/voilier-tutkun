@@ -55,3 +55,11 @@ export interface ActivityLog {
   text: string
   created_at: string
 }
+
+export interface YoutubeVideo {
+  id: string
+  title: string
+  url: string
+  description: string | null
+  created_at: string
+}
