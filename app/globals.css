@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy-dark: #1a365d;
+  --color-navy: #2b6cb0;
+  --color-navy-light: #3182ce;
+  --color-cream: #fafaf9;
+  --color-wood: #d4a574;
+  --color-wood-light: #e8c9a0;
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-100: #f1f5f9;
+  --font-serif: var(--font-lora), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 50;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+.lightbox-overlay.active {
+  display: flex;
+}
+.lightbox-overlay img {
+  max-width: 88vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Padding bottom pour le sticky CTA mobile */
+@media (max-width: 639px) {
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+/* Scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(4px);
+  transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(3px);
+  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.07s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.14s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.21s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.28s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.35s; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.42s; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.49s; }
+
+/* Hero fade-in on load */
+.hero-fade { animation: heroIn 1s ease forwards; }
+.hero-fade-delay { animation: heroIn 1s ease 0.3s forwards; opacity: 0; }
+.hero-fade-delay2 { animation: heroIn 1s ease 0.5s forwards; opacity: 0; }
+.hero-fade-delay3 { animation: heroIn 0.8s ease 0.7s forwards; opacity: 0; }
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(12px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
