@@ -74,7 +74,7 @@ export default function AnnoncesPage() {
     e.preventDefault()
     const payload = {
       platform: form.platform,
-      url: form.url,
+      url: form.url || null,
       status: form.status,
       published_at: form.published_at || null,
       expires_at: form.expires_at || null,
@@ -136,7 +136,7 @@ export default function AnnoncesPage() {
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">URL</label>
-            <input value={form.url} onChange={(e) => setForm({ ...form, url: e.target.value })} required className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="https://..." />
+            <input value={form.url} onChange={(e) => setForm({ ...form, url: e.target.value })} required={form.status !== 'planned'} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="https://..." />
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Statut</label>
