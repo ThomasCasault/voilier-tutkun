@@ -4,7 +4,7 @@ export interface Listing {
   id: string
   platform: string
   url: string
-  status: 'active' | 'expired' | 'to_renew' | 'draft'
+  status: 'active' | 'expired' | 'to_renew' | 'draft' | 'planned'
   published_at: string | null
   expires_at: string | null
   notes: string | null

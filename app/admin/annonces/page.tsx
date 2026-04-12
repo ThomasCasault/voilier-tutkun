@@ -28,6 +28,7 @@ const statusColors: Record<string, string> = {
   expired: 'bg-red-500/20 text-red-400',
   to_renew: 'bg-orange-500/20 text-orange-400',
   draft: 'bg-slate-500/20 text-slate-400',
+  planned: 'bg-purple-500/20 text-purple-400',
 }
 
 const statusLabels: Record<string, string> = {
@@ -35,6 +36,7 @@ const statusLabels: Record<string, string> = {
   expired: 'Expirée',
   to_renew: 'À renouveler',
   draft: 'Brouillon',
+  planned: 'À publier',
 }
 
 const emptyForm = {
@@ -143,6 +145,7 @@ export default function AnnoncesPage() {
               <option value="active">Active</option>
               <option value="expired">Expirée</option>
               <option value="to_renew">À renouveler</option>
+              <option value="planned">À publier</option>
             </select>
           </div>
           <div>
