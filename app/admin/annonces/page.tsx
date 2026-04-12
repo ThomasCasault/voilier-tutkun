@@ -4,6 +4,25 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase'
 import type { Listing } from '@/lib/types'
 
+function PasswordCell({ value }: { value: string | null }) {
+  const [visible, setVisible] = useState(false)
+  if (!value) return <span className="text-slate-500">—</span>
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className="font-mono text-sm">{visible ? value : '••••••••'}</span>
+      <button onClick={() => setVisible(!visible)} className="text-slate-400 hover:text-slate-200" title={visible ? 'Masquer' : 'Afficher'}>
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {visible ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          )}
+        </svg>
+      </button>
+    </span>
+  )
+}
+
 const statusColors: Record<string, string> = {
   active: 'bg-green-500/20 text-green-400',
   expired: 'bg-red-500/20 text-red-400',
@@ -25,6 +44,8 @@ const emptyForm = {
   published_at: '',
   expires_at: '',
   notes: '',
+  username: '',
+  password: '',
 }
 
 export default function AnnoncesPage() {
@@ -56,6 +77,8 @@ export default function AnnoncesPage() {
       published_at: form.published_at || null,
       expires_at: form.expires_at || null,
       notes: form.notes || null,
+      username: form.username || null,
+      password: form.password || null,
     }
 
     if (editId) {
@@ -78,6 +101,8 @@ export default function AnnoncesPage() {
       published_at: listing.published_at ?? '',
       expires_at: listing.expires_at ?? '',
       notes: listing.notes ?? '',
+      username: listing.username ?? '',
+      password: listing.password ?? '',
     })
     setEditId(listing.id)
     setShowForm(true)
@@ -128,6 +153,14 @@ export default function AnnoncesPage() {
             <label className="block text-sm text-slate-300 mb-1">Expire le</label>
             <input type="date" value={form.expires_at} onChange={(e) => setForm({ ...form, expires_at: e.target.value })} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
           </div>
+          <div>
+            <label className="block text-sm text-slate-300 mb-1">Utilisateur</label>
+            <input value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value })} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="email ou nom d'utilisateur" />
+          </div>
+          <div>
+            <label className="block text-sm text-slate-300 mb-1">Mot de passe</label>
+            <input value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="mot de passe du compte" />
+          </div>
           <div className="md:col-span-2">
             <label className="block text-sm text-slate-300 mb-1">Notes</label>
             <textarea value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} rows={2} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
@@ -152,8 +185,8 @@ export default function AnnoncesPage() {
                 <th className="text-left px-4 py-3 font-medium">Plateforme</th>
                 <th className="text-left px-4 py-3 font-medium">URL</th>
                 <th className="text-left px-4 py-3 font-medium">Statut</th>
-                <th className="text-left px-4 py-3 font-medium">Publiée</th>
-                <th className="text-left px-4 py-3 font-medium">Expire</th>
+                <th className="text-left px-4 py-3 font-medium">Utilisateur</th>
+                <th className="text-left px-4 py-3 font-medium">Mot de passe</th>
                 <th className="text-right px-4 py-3 font-medium">Actions</th>
               </tr>
             </thead>
@@ -171,8 +204,8 @@ export default function AnnoncesPage() {
                       {statusLabels[l.status]}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-slate-400">{l.published_at ?? '—'}</td>
-                  <td className="px-4 py-3 text-slate-400">{l.expires_at ?? '—'}</td>
+                  <td className="px-4 py-3 text-slate-400">{l.username ?? '—'}</td>
+                  <td className="px-4 py-3"><PasswordCell value={l.password} /></td>
                   <td className="px-4 py-3 text-right space-x-2">
                     <button onClick={() => handleEdit(l)} className="text-wood hover:text-wood-light text-xs">Modifier</button>
                     <button onClick={() => handleDelete(l.id)} className="text-red-400 hover:text-red-300 text-xs">Supprimer</button>

@@ -8,6 +8,8 @@ export interface Listing {
   published_at: string | null
   expires_at: string | null
   notes: string | null
+  username: string | null
+  password: string | null
   created_at: string
 }
 
