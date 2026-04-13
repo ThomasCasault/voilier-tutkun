@@ -128,8 +128,7 @@ export default function AnnoncesPage() {
         </button>
       </div>
 
-      {showForm && (
-        <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className={`bg-slate-800 border border-slate-700 rounded-lg p-6 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4 ${showForm ? '' : 'hidden'}`}>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Plateforme</label>
             <input value={form.platform} onChange={(e) => setForm({ ...form, platform: e.target.value })} autoComplete="off" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="Kijiji, Marketplace, YachtWorld..." />
@@ -174,7 +173,6 @@ export default function AnnoncesPage() {
             </button>
           </div>
         </div>
-      )}
 
       {loading ? (
         <div className="text-slate-400">Chargement...</div>
