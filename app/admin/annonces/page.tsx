@@ -70,8 +70,8 @@ export default function AnnoncesPage() {
 
   useEffect(() => { fetchListings() }, [])
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
+  async function handleSubmit(e?: React.FormEvent | React.MouseEvent) {
+    e?.preventDefault()
     const payload = {
       platform: form.platform,
       url: form.url || null,
@@ -129,14 +129,14 @@ export default function AnnoncesPage() {
       </div>
 
       {showForm && (
-        <form onSubmit={handleSubmit} onKeyDown={(e) => { if (e.key === 'Enter' && (e.target as HTMLElement).tagName !== 'BUTTON') e.preventDefault() }} className="bg-slate-800 border border-slate-700 rounded-lg p-6 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm text-slate-300 mb-1">Plateforme</label>
-            <input value={form.platform} onChange={(e) => setForm({ ...form, platform: e.target.value })} required className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="Kijiji, Marketplace, YachtWorld..." />
+            <input value={form.platform} onChange={(e) => setForm({ ...form, platform: e.target.value })} autoComplete="off" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="Kijiji, Marketplace, YachtWorld..." />
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">URL</label>
-            <input value={form.url} onChange={(e) => setForm({ ...form, url: e.target.value })} required={form.status !== 'planned'} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="https://..." />
+            <input value={form.url} onChange={(e) => setForm({ ...form, url: e.target.value })} autoComplete="off" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="https://..." />
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Statut</label>
@@ -150,11 +150,11 @@ export default function AnnoncesPage() {
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Publiée le</label>
-            <input type="date" value={form.published_at} onChange={(e) => setForm({ ...form, published_at: e.target.value })} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
+            <input type="date" value={form.published_at} onChange={(e) => setForm({ ...form, published_at: e.target.value })} autoComplete="off" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Expire le</label>
-            <input type="date" value={form.expires_at} onChange={(e) => setForm({ ...form, expires_at: e.target.value })} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
+            <input type="date" value={form.expires_at} onChange={(e) => setForm({ ...form, expires_at: e.target.value })} autoComplete="off" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Utilisateur</label>
@@ -166,14 +166,14 @@ export default function AnnoncesPage() {
           </div>
           <div className="md:col-span-2">
             <label className="block text-sm text-slate-300 mb-1">Notes</label>
-            <textarea value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} rows={2} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
+            <textarea value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} rows={2} autoComplete="off" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" />
           </div>
           <div className="md:col-span-2">
-            <button type="submit" className="bg-wood hover:bg-wood-light text-navy-dark font-bold px-6 py-2 rounded-lg text-sm transition-colors">
+            <button onClick={handleSubmit} className="bg-wood hover:bg-wood-light text-navy-dark font-bold px-6 py-2 rounded-lg text-sm transition-colors">
               {editId ? 'Modifier' : 'Ajouter'}
             </button>
           </div>
-        </form>
+        </div>
       )}
 
       {loading ? (
