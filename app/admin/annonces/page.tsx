@@ -169,7 +169,7 @@ export default function AnnoncesPage() {
           </div>
           <div className="md:col-span-2">
             <button onClick={handleSubmit} className="bg-wood hover:bg-wood-light text-navy-dark font-bold px-6 py-2 rounded-lg text-sm transition-colors">
-              {editId ? 'Modifier' : 'Ajouter'}
+              {editId ? 'Sauvegarder les modifications' : 'Sauvegarder'}
             </button>
           </div>
         </div>

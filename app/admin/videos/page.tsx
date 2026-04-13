@@ -94,7 +94,7 @@ export default function VideosPage() {
             <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={2} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="Pourquoi cette vidéo est pertinente..." />
           </div>
           <button type="submit" className="bg-wood hover:bg-wood-light text-navy-dark font-bold px-6 py-2 rounded-lg text-sm transition-colors">
-            {editId ? 'Modifier' : 'Ajouter'}
+            {editId ? 'Sauvegarder les modifications' : 'Sauvegarder'}
           </button>
         </form>
       )}
