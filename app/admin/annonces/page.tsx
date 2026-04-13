@@ -158,11 +158,11 @@ export default function AnnoncesPage() {
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Utilisateur</label>
-            <input value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value })} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="email ou nom d'utilisateur" />
+            <input value={form.username} onChange={(e) => setForm({ ...form, username: e.target.value })} autoComplete="off" data-1p-ignore data-lpignore="true" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="email ou nom d'utilisateur" />
           </div>
           <div>
             <label className="block text-sm text-slate-300 mb-1">Mot de passe</label>
-            <input value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="mot de passe du compte" />
+            <input value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} autoComplete="off" data-1p-ignore data-lpignore="true" className="w-full bg-slate-900 border border-slate-600 rounded-lg px-3 py-2 text-slate-100 focus:border-wood focus:outline-none" placeholder="mot de passe du compte" />
           </div>
           <div className="md:col-span-2">
             <label className="block text-sm text-slate-300 mb-1">Notes</label>
