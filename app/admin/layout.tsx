@@ -35,7 +35,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Sidebar */}
       <aside className="w-64 bg-slate-800 border-r border-slate-700 flex flex-col shrink-0">
         <div className="p-6 border-b border-slate-700">
-          <Link href="/" className="font-serif text-xl font-bold text-wood hover:text-wood-light transition-colors">TUTKÜN</Link>
+          <Link href="/" className="font-serif text-xl font-bold text-wood hover:text-wood-light transition-colors">MAIN NOIRE</Link>
           <p className="text-slate-400 text-xs mt-1">Panel Admin</p>
         </div>
         <nav className="flex-1 p-4 space-y-1">
@@ -75,7 +75,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Main content */}
       <main className="flex-1 overflow-auto">
         <header className="bg-slate-800 border-b border-slate-700 px-8 py-4">
-          <h2 className="text-slate-100 font-semibold">Panel Admin — TUTKÜN</h2>
+          <h2 className="text-slate-100 font-semibold">Panel Admin — MAIN NOIRE</h2>
         </header>
         <div className="p-8">
           {children}

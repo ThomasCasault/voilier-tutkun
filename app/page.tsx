@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="w-full h-[80vh] md:h-[70vh] min-h-[500px] bg-navy-dark overflow-hidden">
           <Image
             src="/images/hero.png"
-            alt="Voilier TUTKÜN — Norwalk Island Sharpie 26 sous voile"
+            alt="Voilier MAIN NOIRE — Norwalk Island Sharpie 26 sous voile"
             fill
             priority
             className="object-cover opacity-90"
@@ -24,7 +24,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             <h1 className="hero-fade font-serif text-3xl md:text-5xl font-bold text-white leading-snug md:leading-tight">
               Norwalk Island Sharpie 26<br />
-              <span className="text-wood-light italic tracking-wide">&laquo; TUTKÜN &raquo;</span>
+              <span className="text-wood-light italic tracking-wide">&laquo; MAIN NOIRE &raquo;</span>
             </h1>
             <p className="hero-fade-delay mt-2 text-cream/90 text-base md:text-xl font-sans tracking-wide uppercase">
               Conçu par Bruce Kirby — designer du <span className="font-semibold">Laser</span>
@@ -66,14 +66,14 @@ export default function HomePage() {
       <section id="histoire" className="py-16 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="reveal font-serif text-2xl md:text-3xl text-navy-dark font-bold mb-4 text-center">
-            L&apos;histoire de TUTKÜN
+            L&apos;histoire de MAIN NOIRE
           </h2>
           <div className="reveal flex justify-center mb-8">
             <div className="w-16 h-0.5 bg-wood rounded-full" />
           </div>
           <div className="reveal space-y-5 font-serif text-gray-700 leading-relaxed text-lg">
             <p>
-              <strong className="text-navy-dark">TUTKÜN</strong> a été construit entre 2010 et 2018
+              <strong className="text-navy-dark">MAIN NOIRE</strong> a été construit entre 2010 et 2018
               à partir des plans du légendaire Bruce Kirby, le même designer qui a donné au monde
               le Laser, le voilier le plus produit de l&apos;histoire.
               Huit ans de construction amateur soignée en contreplaqué/époxy.
@@ -281,7 +281,7 @@ export default function HomePage() {
           </div>
           <div className="space-y-3 mb-8 max-w-sm mx-auto">
             <a
-              href="mailto:voilier.casault@gmail.com?subject=TUTKÜN — Norwalk Island Sharpie 26"
+              href="mailto:voilier.casault@gmail.com?subject=MAIN NOIRE — Norwalk Island Sharpie 26"
               className="flex items-center justify-center gap-2 bg-wood hover:bg-wood-light text-navy-dark font-bold px-8 py-4 rounded-lg transition-colors text-lg w-full"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>

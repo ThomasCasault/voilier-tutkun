@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const photos = Array.from({ length: 14 }, (_, i) => ({
   src: `/images/photo-${String(i + 1).padStart(2, '0')}.jpg`,
-  alt: `TUTKÜN — photo ${i + 1}`,
+  alt: `MAIN NOIRE — photo ${i + 1}`,
 }))
 
 export default function Lightbox() {

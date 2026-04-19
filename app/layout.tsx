@@ -15,7 +15,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'TUTKÜN — Norwalk Island Sharpie 26 à vendre',
+  title: 'MAIN NOIRE — Norwalk Island Sharpie 26 à vendre',
   description:
     'Voilier Norwalk Island Sharpie 26, conçu par Bruce Kirby. Construction bois/époxy 2010–2018. 29 900 $ CAD. Évalué 65 700 $.',
   icons: {
